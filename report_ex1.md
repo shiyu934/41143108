@@ -30,7 +30,8 @@ unsigned long long Ackermann(unsigned int m, unsigned int n) {
         return Ackermann(m - 1, Ackermann(m, n - 1));
     }
 }
-
+```
+```
 int main() {
     unsigned int m, n;
     cout << "請輸入 m 與 n: ";
@@ -89,13 +90,13 @@ $ ./ackermann
 
 2. **易於理解與實現**  
    程式結構簡潔清晰，使用遞迴可省略手動模擬堆疊或迴圈，使程式碼簡單且易於維護，例如：
-
+```
 unsigned long long Ackermann(unsigned int m, unsigned int n) {
     if (m == 0) return n + 1;
     else if (n == 0) return Ackermann(m - 1, 1);
     else return Ackermann(m - 1, Ackermann(m, n - 1));
 }
-
+```
 3. **遞迴的語意清楚**  
 在程式當中，每一次遞迴呼叫都對應一個「子問題」，最終結果會隨著遞迴逐層返回組合，完成計算。設計簡化程式邏輯，不需額外temp來儲存。
 
