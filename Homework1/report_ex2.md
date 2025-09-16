@@ -27,30 +27,42 @@ powerset(S) = { (), (a), (b), (c), (a,b), (a,c), (b,c), (a,b,c) }
 
 ```cpp
 #include <iostream>
+
 using namespace std;
 
-// 遞迴實作 Ackermann 函數
-unsigned long long Ackermann(unsigned int m, unsigned int n) {
-    if (m == 0) {
-        return n + 1;
-    } else if (n == 0) {
-        return Ackermann(m - 1, 1);
-    } else {
-        return Ackermann(m - 1, Ackermann(m, n - 1));
+// 遞迴函式：產生冪集
+void Powerset(char input[], char subset[], int n, int index, int Size) {
+    // 終止條件：所有元素都已考慮完
+    if (index == n) {
+        cout << "{ ";
+        for (int i = 0; i < Size; ++i) {
+            cout << subset[i] << " ";
+        }
+        cout << "}" << endl;
+        return;
     }
+
+    // Case 1：不選擇 input[index]
+    Powerset(input, subset, n, index + 1, Size);
+
+    // Case 2：選擇 input[index]
+    subset[Size] = input[index]; // 放進 subset 中
+    Powerset(input, subset, n, index + 1, Size + 1);
 }
 ```
 ```
 int main() {
-    unsigned int m, n;
-    cout << "請輸入 m 與 n: ";
-    cin >> m >> n;
+    char input[] = {'a', 'b', 'c'}; // 原始集合
+    int n = sizeof(input) / sizeof(input[0]);
 
-    cout << "Ackermann(" << m << "," << n << ") = "
-         << Ackermann(m, n) << endl;
+    char subset[10]; // 預設最大不超過 10 個元素（視情況可調整）
+
+    cout << "集合 {a, b, c} 的冪集如下：" << endl;
+    Powerset(input, subset, n, 0, 0);
 
     return 0;
 }
+
 
 ```
 ## 效能分析
