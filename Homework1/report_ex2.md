@@ -86,10 +86,17 @@ int main() {
 ### 編譯與執行指令
 
 ```shell
-$ g++ ackermann.cpp -o ackermann
-$ ./ackermann
-3 2
-29
+$ g++  powerset.cpp -o powerset
+$ ./powerset
+集合 {a, b, c} 的冪集如下：
+{ }
+{ c }
+{ b }
+{ b c }
+{ a }
+{ a c }
+{ a b }
+{ a b c }
 ```
 ### 結論
 
