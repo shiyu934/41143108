@@ -49,8 +49,7 @@ void Powerset(char input[], char subset[], int n, int index, int Size) {
     subset[Size] = input[index]; // 放進 subset 中
     Powerset(input, subset, n, index + 1, Size + 1);
 }
-```
-```
+
 int main() {
     char input[] = {'a', 'b', 'c'}; // 原始集合
     int n = sizeof(input) / sizeof(input[0]);
