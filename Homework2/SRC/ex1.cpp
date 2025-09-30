@@ -2,41 +2,41 @@
 #include <cmath>
 using namespace std;
 
-// 前向?明
+
 class Polynomial;
 
-// Term ?定?
+// Term 
 class Term {
     friend class Polynomial;
     friend istream& operator>>(istream&, Polynomial&);
     friend ostream& operator<<(ostream&, const Polynomial&);
 private:
-    float coef;   // 系?
-    int exp;      // 指?
+    float coef;   // 系數
+    int exp;      // 指數
 };
 
 // Polynomial ?定?
 class Polynomial {
 public:
-    Polynomial();                           // 默?构造函?
-    ~Polynomial();                          // 析构函?
-    Polynomial(const Polynomial&);          // 拷?构造函?
-    Polynomial& operator=(const Polynomial&); // ?值?算符重?
+    Polynomial();                           
+    ~Polynomial();                          
+    Polynomial(const Polynomial&);         
+    Polynomial& operator=(const Polynomial&); 
 
-    Polynomial Add(const Polynomial& poly);   // 多?式加法
-    Polynomial Mult(const Polynomial& poly);  // 多?式乘法
-    float Eval(float f);                      // 多?式求值
+    Polynomial Add(const Polynomial& poly);   //加法
+    Polynomial Mult(const Polynomial& poly);  //乘法
+    float Eval(float f);                      //求值
 
     // ?入?出?算符重?
     friend istream& operator>>(istream& in, Polynomial& poly);
     friend ostream& operator<<(ostream& out, const Polynomial& poly);
 
 private:
-    Term* termArray;  // 非零???
-    int capacity;     // ??大小
-    int terms;        // ??非零??
+    Term* termArray;  // 
+    int capacity;     // 
+    int terms;        //
 
-    void Resize(int newCapacity); // ?容函?
+    void Resize(int newCapacity); // 
 };
 
 Polynomial::Polynomial() {
