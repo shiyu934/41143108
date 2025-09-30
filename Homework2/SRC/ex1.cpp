@@ -15,7 +15,7 @@ private:
     int exp;      // 指數
 };
 
-// Polynomial ?定?
+// Polynomial
 class Polynomial {
 public:
     Polynomial();                           
@@ -27,7 +27,7 @@ public:
     Polynomial Mult(const Polynomial& poly);  //乘法
     float Eval(float f);                      //求值
 
-    // ?入?出?算符重?
+    
     friend istream& operator>>(istream& in, Polynomial& poly);
     friend ostream& operator<<(ostream& out, const Polynomial& poly);
 
