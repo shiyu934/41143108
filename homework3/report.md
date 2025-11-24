@@ -72,7 +72,8 @@
 
 以下為主要程式碼：
 
-```#include <iostream>
+```
+#include <iostream>
 #include <cmath> // for pow
 
 using namespace std;
