@@ -356,7 +356,8 @@ public:
         return sum;
     }
 };
-
+```
+```
 // 測試主程式
 int main() {
     Polynomial p1, p2, p3;
